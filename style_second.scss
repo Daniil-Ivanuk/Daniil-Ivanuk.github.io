@@ -9,7 +9,7 @@ $pink: pink;
 $gray: gray;
 $lightgray: lightgray;
 
-// БЛОК ЗАГОЛОВКА
+//БЛОК ЗАГОЛОВКА
 .lecture-header {
     background: $pink;
     color: $black;
@@ -40,7 +40,7 @@ $lightgray: lightgray;
     }
 }
 
-// ОГЛАВЛЕНИЕ
+//ОГЛАВЛЕНИЕ
 .toc-section {
     background: $lightgray;
     padding: 40px 0;
@@ -74,7 +74,7 @@ $lightgray: lightgray;
     }
 }
 
-// БЛОК О ДОКЛАДЧИКЕ (оставляем без изменений)
+//БЛОК О ДОКЛАДЧИКЕ
 .speaker-section {
     padding: 40px 0;
     
@@ -194,7 +194,7 @@ $lightgray: lightgray;
     }
 }
 
-// ВЫДЕЛЕННЫЕ БЛОКИ (желтые, обрезанные под контент)
+//ВЫДЕЛЕННЫЕ БЛОКИ
 .highlight-block {
     background: $yellow;
     padding: 0.8rem 1rem;
@@ -208,8 +208,7 @@ $lightgray: lightgray;
         font-size: 1rem;
     }
 }
-
-// FAQ (обрезаем отступы)
+//ВОПРОСЫ
 .faq-item {
     border: 1px solid $gray;
     padding: 0.8rem 1rem;
@@ -228,7 +227,7 @@ $lightgray: lightgray;
     }
 }
 
-// ССЫЛКА ВЕРНУТЬСЯ К ОГЛАВЛЕНИЮ
+//ССЫЛКА ВЕРНУТЬСЯ К ОГЛАВЛЕНИЮ
 .back-to-top {
     margin-top: 1.5rem;
     text-align: center;
