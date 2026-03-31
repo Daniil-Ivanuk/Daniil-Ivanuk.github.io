@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция: Разработка ПО как производственный процесс</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07v4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style_second.css">
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <!-- БЛОК ЗАГОЛОВОК ЛЕКЦИИ -->
+        <div class="lecture-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="lecture-title">Разработка ПО как производственный процесс</h1>
+                        <p class="lecture-subtitle">Понимание роли разработчика и управление техническим долгом</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК ОГЛАВЛЕНИЯ -->
+        <div class="toc-section">
+            <div class="container">
+                <h2 class="section-title">Оглавление</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="toc-list">
+                            <li><a href="#speaker">О докладчике</a></li>
+                            <li><a href="#intro">Введение</a></li>
+                            <li><a href="#roles">Ключевые роли</a></li>
+                            <li><a href="#developer">Влияние разработчика</a></li>
+                            <li><a href="#planning">Треугольник планирования</a></li>
+                            <li><a href="#techdebt">Технический долг</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="toc-list">
+                            <li><a href="#management">Роль менеджмента</a></li>
+                            <li><a href="#cpp">Разработка на C++</a></li>
+                            <li><a href="#team">Размер команды</a></li>
+                            <li><a href="#faq">Вопросы и ответы</a></li>
+                            <li><a href="#conclusion">Заключение</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК О ДОКЛАДЧИКЕ -->
+        <div id="speaker" class="speaker-section">
+            <div class="container">
+                <div class="speaker-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 text-center">
+                            <img src=".\img\speaker.jpg" alt="Александр Быячок" class="speaker-photo">
+                        </div>
+                        <div class="col-md-9">
+                            <h3 class="speaker-title">О докладчике</h3>
+                            <div class="speaker-name">Александр Быячок</div>
+                            <p class="speaker-position">Эксперт в области разработки программного обеспечения</p>
+                            <p class="speaker-text">Опытный специалист с глубокими знаниями в управлении процессами разработки ПО. Специализируется на производственном подходе к созданию программного обеспечения, управлении техническим долгом и оптимизации работы команд разработки.</p>
+                            <p class="speaker-text"><strong>Тема доклада:</strong> "Разработка ПО как производственный процесс: роли, планирование и технический долг"</p>
+                            <p class="speaker-text"><strong>Продолжительность:</strong> 1 час 1 минута</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <div class="container">
+            <!-- ВВЕДЕНИЕ -->
+            <div id="intro" class="content-block">
+                <h2 class="content-title">Введение: разработка как производство</h2>
+                <p class="content-text">В начале доклада Александр Быячок представляет основные проблемы разработки ПО: нехватка оборудования, недопонимание в работе над функционалом, структуры команд и методологий. Он вводит понятие разработки как <strong>производственного процесса</strong>, где:</p>
+                <ul class="content-list">
+                    <li>Входное сырьё — требования и задачи</li>
+                    <li>Выход — работающий продукт</li>
+                    <li>Участвуют множество ролей и этапов</li>
+                </ul>
+                <div class="black-box">
+                    Производственная цепочка разработки ПО<br>
+                    Требования -> Анализ -> Проектирование -> Разработка -> Тестирование -> Развертывание -> Поддержка
+                </div>
+                <div class="chain-image">
+                    <img src=".\img\stage_of_projects.jpg" alt="Производственная цепочка разработки ПО" class="production-image">
+                </div>
+                <p class="content-text">Рассматриваются различные фреймворки управления проектами: Scrum, Kanban, Prince2, а также роль разработки в общем проектном управлении.</p>
+            </div>
+
+            <!-- КЛЮЧЕВЫЕ РОЛИ -->
+            <div id="roles" class="content-block">
+                <h2 class="content-title">Ключевые роли в проекте</h2>
+                <p class="content-text">Александр выделяет этапы проекта: инициирование, разработка, закрытие. Особое внимание уделяется двум ключевым ролям:</p>
+                <ul class="content-list">
+                    <li><strong>Продакт-менеджер</strong> — определяет что нужно делать</li>
+                    <li><strong>Разработчик</strong> — ключевое звено в производственной цепочке</li>
+                </ul>
+                <div class="highlight-block">
+                    <p class="highlight-text">Ключевая идея: Разработчик — это среднее звено процесса, важное и ответственное, но при этом "слабое звено", от которого зависит успех всего производства.</p>
+                </div>
+            </div>
+
+            <!-- ВЛИЯНИЕ РАЗРАБОТЧИКА -->
+            <div id="developer" class="content-block">
+                <h2 class="content-title">Влияние разработчика на процессы</h2>
+                <p class="content-text">Разработчик выступает как <strong>ограничитель и источник ограничений</strong> для других команд. Его темп и производительность напрямую влияют на:</p>
+                <ul class="content-list">
+                    <li>Сроки релиза продукта</li>
+                    <li>Качество конечного продукта</li>
+                    <li>Эффективность работы всей команды</li>
+                </ul>
+                <div class="black-box">
+                    Факторы, влияющие на производительность разработчика:<br>
+                    1. Емкость команды<br>
+                    2. Объем работы<br>
+                    3. Технический долг<br>
+                    4. Инструменты и технологии<br>
+                    5. Коммуникация внутри команды
+                </div>
+            </div>
+
+            <!-- ТРЕУГОЛЬНИК ПЛАНИРОВАНИЯ -->
+            <div id="planning" class="content-block">
+                <h2 class="content-title">Треугольник планирования</h2>
+                <p class="content-text">Александр рассматривает три ключевых параметра при планировании проекта:</p>
+                <div class="black-box">
+                    Треугольник планирования:<br>
+                    • Емкость команды<br>
+                    • Объем работы<br>
+                    • Сроки
+                </div>
+                <img src=".\img\treangle.jpg" alt="Треугольник планирования" class="planning-image">
+                <div class="highlight-block">
+                    <p class="highlight-text">Важное замечание: Компромисс по качеству недопустим! Нельзя жертвовать качеством ради соблюдения сроков или объема работ.</p>
+                </div>
+            </div>
+
+            <!-- ТЕХНИЧЕСКИЙ ДОЛГ -->
+            <div id="techdebt" class="content-block">
+                <h2 class="content-title">Технический долг и эффективность</h2>
+                <p class="content-text">Вводится понятие <strong>фокус фактора</strong> - части времени, реально затрачиваемого на полезную работу разработки.</p>
+                <div class="black-box">
+                    Формула фокус фактора:<br>
+                    Фокус фактор = Время на полезную работу / Общее рабочее время
+                </div>
+                <p class="content-text"><strong>Технический долг</strong> - это проблемы в коде и продукте, возникающие от поспешной работы и высоких нагрузок.</p>
+                <p class="content-text"><strong>Пути борьбы с техническим долгом:</strong></p>
+                <ul class="content-list">
+                    <li>Планирование работы по снижению техдолга</li>
+                    <li>Регулярное включение исправления долга в требования</li>
+                    <li>Повышение качества кода</li>
+                </ul>
+            </div>
+
+            <!-- РОЛЬ МЕНЕДЖМЕНТА -->
+            <div id="management" class="content-block">
+                <h2 class="content-title">Роль менеджмента</h2>
+                <p class="content-text">Важность использования <strong>бизнес-аргументов</strong> для обоснования запросов на улучшение инструментов, времени и других ресурсов. Отказ от выделения ресурсов чаще связан с:</p>
+                <ul class="content-list">
+                    <li>Бюджетными ограничениями</li>
+                    <li>Отсутствием четких обоснований</li>
+                    <li>Непониманием ценности предлагаемых изменений</li>
+                </ul>
+            </div>
+
+            <!-- C++ -->
+            <div id="cpp" class="content-block">
+                <h2 class="content-title">Разработка на C++</h2>
+                <p class="content-text">Особенности разработки на C++:</p>
+                <ul class="content-list">
+                    <li><strong>Сложности:</strong> высокая стоимость поддержки и сертификации</li>
+                    <li><strong>Преимущества:</strong> высокая надежность для критичных систем</li>
+                    <li><strong>Особенности:</strong> соответствие требованиям крупных компаний</li>
+                </ul>
+                <div class="black-box">
+                    Требования к сертификации кода на C++:<br>
+                    • Соответствие MISRA C++ стандартам<br>
+                    • Автоматическое тестирование<br>
+                    • Code review процессы<br>
+                    • Документирование архитектуры
+                </div>
+            </div>
+
+            <!-- РАЗМЕР КОМАНДЫ -->
+            <div id="team" class="content-block">
+                <h2 class="content-title">Размер команды и эффективность</h2>
+                <p class="content-text">Влияние размера команды на технический долг и производительность:</p>
+                <ul class="content-list">
+                    <li><strong>Слишком маленькая команда</strong> - не хватает ресурсов</li>
+                    <li><strong>Слишком большая команда</strong> - усложняются коммуникации</li>
+                    <li><strong>Оптимальный размер</strong> - 5-7 человек</li>
+                </ul>
+                <div class="highlight-block">
+                    <p class="highlight-text">Формула эффективности: Эффективность = (Продуктивность * Качество) / (Технический долг + Коммуникационные издержки)</p>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div id="faq" class="content-block">
+                <h2 class="content-title">Часто задаваемые вопросы</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Можно ли управлять качеством разработки?</div>
+                    <div class="faq-answer">Да, качество напрямую влияет на количество проблем в продакшн. Поддерживать высокий уровень качества обязательно.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Как взаимодействуют тимлид и проджект-менеджер?</div>
+                    <div class="faq-answer">Проджект-менеджер отвечает за планирование и управление проектом в целом, тимлид - за техническое руководство командой.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Как бороться с техническим долгом?</div>
+                    <div class="faq-answer">Включать работу по снижению техдолга в план, использовать оценку стоимости долга при планировании.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Как определить оптимальный размер команды?</div>
+                    <div class="faq-answer">Оптимальный размер - это баланс между достаточной ресурсной базой и удобством коммуникаций. Обычно 5-7 человек.</div>
+                </div>
+            </div>
+
+            <!-- ЗАКЛЮЧЕНИЕ -->
+            <div id="conclusion" class="content-block">
+                <h2 class="content-title">Заключение</h2>
+                <p class="content-text"><strong>Ключевые выводы:</strong></p>
+                <ul class="content-list">
+                    <li>Разработчик - ключевое, но уязвимое звено всей цепи</li>
+                    <li>Необходимо сочетать чёткое планирование, управление техническим долгом и поддержание качества</li>
+                    <li>Минимизация техдолга - основной инструмент повышения эффективности</li>
+                </ul>
+                <div class="black-box">
+                    Рекомендации для слушателей:<br>
+                    1. Внедрять системный подход к учёту технического долга<br>
+                    2. Использовать бизнес-аргументы при обсуждении ресурсов<br>
+                    3. Активно коммуницировать между ролями в проекте<br>
+                    4. Отслеживать фокус-фактор команды<br>
+                    5. Серьёзно относиться к качеству кода
+                </div>
+                
+                <div class="back-to-top">
+                    <a href="#">Вернуться к оглавлению</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

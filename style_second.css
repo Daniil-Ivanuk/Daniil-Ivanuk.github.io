@@ -1,0 +1,207 @@
+.lecture-header {
+  background: pink;
+  color: black;
+  padding: 60px 0;
+}
+.lecture-header .lecture-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: black;
+}
+@media (max-width: 768px) {
+  .lecture-header .lecture-title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 576px) {
+  .lecture-header .lecture-title {
+    font-size: 1.6rem;
+  }
+}
+.lecture-header .lecture-subtitle {
+  font-size: 1.2rem;
+  color: black;
+}
+@media (max-width: 576px) {
+  .lecture-header .lecture-subtitle {
+    font-size: 1rem;
+  }
+}
+
+.toc-section {
+  background: lightgray;
+  padding: 40px 0;
+}
+.toc-section .section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: black;
+}
+.toc-section .toc-list {
+  list-style: none;
+  padding-left: 0;
+}
+.toc-section .toc-list li {
+  margin-bottom: 0.8rem;
+}
+.toc-section .toc-list li a {
+  color: blue;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.toc-section .toc-list li a:hover {
+  color: red;
+  padding-left: 10px;
+}
+
+.speaker-section {
+  padding: 40px 0;
+}
+.speaker-section .speaker-block {
+  background: yellow;
+  padding: 2rem;
+}
+.speaker-section .speaker-block .speaker-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: black;
+}
+.speaker-section .speaker-block .speaker-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 0.5rem;
+}
+.speaker-section .speaker-block .speaker-position {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: black;
+}
+.speaker-section .speaker-block .speaker-text {
+  margin-bottom: 0.8rem;
+  color: black;
+}
+.speaker-section .speaker-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid red;
+}
+@media (max-width: 768px) {
+  .speaker-section .speaker-photo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+  }
+}
+
+.content-block {
+  margin: 2rem 0;
+  scroll-margin-top: 20px;
+}
+.content-block .content-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: black;
+  border-bottom: 3px solid black;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  .content-block .content-title {
+    font-size: 1.5rem;
+  }
+}
+.content-block .content-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  color: black;
+}
+.content-block .content-list {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+}
+.content-block .content-list li {
+  margin-bottom: 0.3rem;
+  color: black;
+}
+.content-block .black-box {
+  background: black;
+  color: white;
+  padding: 0.8rem 1rem;
+  margin: 0.8rem 0;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-radius: 5px;
+  display: inline-block;
+  width: auto;
+}
+.content-block .chain-image {
+  text-align: center;
+  margin: 1rem 0;
+}
+.content-block .chain-image .production-image {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid gray;
+  padding: 10px;
+  background: white;
+}
+.content-block .planning-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.8rem auto;
+}
+
+.highlight-block {
+  background: yellow;
+  padding: 0.8rem 1rem;
+  margin: 0.8rem 0;
+  display: inline-block;
+  width: auto;
+}
+.highlight-block .highlight-text {
+  margin: 0;
+  color: black;
+  font-size: 1rem;
+}
+
+.faq-item {
+  border: 1px solid gray;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+}
+.faq-item .faq-question {
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+.faq-item .faq-answer {
+  color: black;
+  font-size: 0.95rem;
+}
+
+.back-to-top {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.back-to-top a {
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+}
+.back-to-top a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style_second.css.map */
