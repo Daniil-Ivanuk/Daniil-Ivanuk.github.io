@@ -4,246 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обо мне</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <style>
-        /* Основные стили */
-        body {
-            background-color: #f5f5f5;
-            color: #000;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Блок обо мне */
-        .about-me {
-            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-            color: white;
-            padding: 60px 0;
-        }
-
-        .about-title {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-        .about-text {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .avatar {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            object-fit: cover;
-        }
-
-        /* Заголовки блоков */
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #000;
-        }
-
-        .games-subtitle, .education-subtitle {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            color: #333;
-        }
-
-        /* Видеоигры */
-        .games-section {
-            padding: 80px 0;
-            background-color: #f5f5f5;
-        }
-
-        .games-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .game-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .game-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .game-item h4 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            color: #333;
-        }
-
-        .game-image {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid #dee2e6;
-        }
-
-        /* Учеба */
-        .education-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .education-content {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 5px solid #4a90e2;
-        }
-
-        /* Любимые блюда */
-        .food-section {
-            padding: 80px 0;
-            background-color: #f5f5f5;
-        }
-
-        .food-item {
-            height: 100%;
-        }
-
-        .food-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-align: center;
-            padding: 1rem;
-            background: white;
-            border-radius: 10px 10px 0 0;
-            margin-bottom: 0;
-        }
-
-        .food-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 0 0 10px 10px;
-            border: 2px solid #dee2e6;
-        }
-
-        /* Кино и сериалы */
-        .movies-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .movies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .movie-category {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid #e9ecef;
-        }
-
-        .movie-category h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        .movie-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .movie-link {
-            color: #4a90e2;
-            text-decoration: none;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .movie-link:hover {
-            color: #357abd;
-            border-bottom-color: #4a90e2;
-            padding-left: 0.5rem;
-        }
-
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            .about-title {
-                font-size: 2.2rem;
-            }
-            
-            .avatar {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .games-grid {
-                gap: 1rem;
-            }
-            
-            .movies-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-me {
-                padding: 40px 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .about-title {
-                font-size: 1.8rem;
-            }
-            
-            .avatar {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .section-title {
-                font-size: 1.7rem;
-            }
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07v4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <!--ПОДКЛЮЧЕНИЕ СКОМПИЛИРОВАННОГО CSS-->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container-fluid p-0">
         <!-- БЛОК ОБО МНЕ -->
         <div class="about-me">
             <div class="container">
-                <div class="row align-items-center min-vh-100">
-                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center mb-3 mb-md-0">
                         <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" 
                              alt="Моя аватарка" class="avatar">
                     </div>
                     <div class="col-md-8">
                         <h1 class="about-title">🎯 Обо мне</h1>
                         <p class="about-text">
-                            Здесь будет информация обо мне. Мои интересы, увлечения, немного о моей жизни и планах на будущее.
+                            Здесь будет информация обо мне. Мои интересы, увлечения.
                         </p>
                         <p class="about-text">
                             Я студент, увлекаюсь видеоиграми, люблю смотреть фильмы и сериалы. 
@@ -254,57 +33,50 @@
             </div>
         </div>
 
-        <!-- БЛОК ВИДЕОИГРЫ -->
+        <!--БЛОК ВИДЕОИГРЫ-->
         <div class="games-section">
             <div class="container">
                 <h2 class="section-title">🎮 Видеоигры</h2>
                 
                 <div class="row">
-                    <!-- ОНЛАЙН ИГРЫ -->
+                    <!--ОНЛАЙН ИГРЫ-->
                     <div class="col-lg-6 mb-5">
                         <h3 class="games-subtitle">Онлайн</h3>
                         <div class="games-grid">
                             <div class="game-item">
                                 <h4>PUBG</h4>
-                                <!-- ✅ КАРТИНКА ИЗ АВАТАРКИ -->
-                                <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="game-image" alt="PUBG">
+                                <img src="img/pubg-battlegrounds-16v1j.jpg" class="game-image" alt="PUBG">
                             </div>
                             <div class="game-item">
                                 <h4>CS2</h4>
-                                <!-- ✅ КАРТИНКА ИЗ АВАТАРКИ -->
-                                <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="game-image" alt="CS2">
+                                <img src="img/Counter-strike_2.jpg" class="game-image" alt="CS2">
                             </div>
                             <div class="game-item">
                                 <h4>Valorant</h4>
-                                <!-- ✅ КАРТИНКА ИЗ АВАТАРКИ -->
-                                <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="game-image" alt="Valorant">
+                                <img src="img/valorant.jpg" class="game-image" alt="Valorant">
                             </div>
                         </div>
                     </div>
 
-                    <!-- ОФФЛАЙН ИГРЫ -->
+                    <!--ОФФЛАЙН ИГРЫ-->
                     <div class="col-lg-6 mb-5">
                         <h3 class="games-subtitle">Офлайн</h3>
                         <div class="games-grid">
                             <div class="game-item">
                                 <h4>Terraria</h4>
-                                <!-- ✅ КАРТИНКА ИЗ АВАТАРКИ -->
-                                <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="game-image" alt="Terraria">
+                                <img src="img\terraria.jpg" class="game-image" alt="Terraria">
                             </div>
                             <div class="game-item">
                                 <h4>Dark Souls 3</h4>
-                                <!-- ✅ КАРТИНКА ИЗ АВАТАРКИ -->
-                                <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="game-image" alt="Dark Souls 3">
+                                <img src="img\ds3.jpg" class="game-image" alt="Dark Souls 3">
                             </div>
                             <div class="game-item">
                                 <h4>Elden Ring</h4>
-                                <!-- ✅ КАРТИНКА ИЗ АВАТАРКИ -->
-                                <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="game-image" alt="Elden Ring">
+                                <img src="img\elden.jpg" class="game-image" alt="Elden Ring">
                             </div>
                             <div class="game-item">
                                 <h4>Ведьмак 3</h4>
-                                <!-- ✅ КАРТИНКА ИЗ АВАТАРКИ -->
-                                <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="game-image" alt="Ведьмак 3">
+                                <img src="img\vedmak3.jpg" class="game-image" alt="Ведьмак 3">
                             </div>
                         </div>
                     </div>
@@ -312,44 +84,44 @@
             </div>
         </div>
 
-        <!-- БЛОК УЧЕБА -->
+        <!--БЛОК УЧЕБА-->
         <div class="education-section">
             <div class="container">
                 <h2 class="section-title">📚 Учеба</h2>
                 <h3 class="education-subtitle">Место учебы</h3>
                 <div class="education-content">
-                    <p>Здесь будет информация об учебном заведении, специальности и годах обучения.</p>
+                    <p>В данный момент учусь в ЯФ МФЮА по направлению прикладная информатика в экономике. Поступил в 2023 году. Сейчас учусь на 3 курсе</p>
                 </div>
             </div>
         </div>
 
-        <!-- БЛОК ЛЮБИМЫЕ БЛЮДА -->
+        <!--БЛОК ЛЮБИМЫЕ БЛЮДА-->
         <div class="food-section">
             <div class="container">
                 <h2 class="section-title">🍕 Любимые блюда</h2>
                 <div class="row">
                     <div class="col-md-3 mb-4">
                         <div class="food-item">
-                            <div class="food-title">КАКАЯ-НИБУДЬ ВКУСНЯХА</div>
-                            <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="food-image" alt="Бургер">
+                            <div class="food-title">Борщ</div>
+                            <img src="img\borch1-pic4_zoom-1500x1500-65610.jpg" class="food-image" alt="Борщ">
                         </div>
                     </div>
                     <div class="col-md-3 mb-4">
                         <div class="food-item">
-                            <div class="food-title">КАКАЯ-НИБУДЬ ВКУСНЯХА</div>
-                            <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="food-image" alt="Пицца">
+                            <div class="food-title">Пюре с котлетой</div>
+                            <img src="img\kotlety-iz-govyadiny-i-svininy.jpg" class="food-image" alt="Пюре с котлетой">
                         </div>
                     </div>
                     <div class="col-md-3 mb-4">
                         <div class="food-item">
-                            <div class="food-title">КАКАЯ-НИБУДЬ ВКУСНЯХА</div>
-                            <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="food-image" alt="Рамен">
+                            <div class="food-title">Салат с кукурузой, фасолью и сухариками</div>
+                            <img src="img\salat-s-fasolyu-kukuruzoy-i-suharikami.jpg" class="food-image" alt="Салат с кукурузой, фасолью и сухариками">
                         </div>
                     </div>
                     <div class="col-md-3 mb-4">
                         <div class="food-item">
-                            <div class="food-title">КАКАЯ-НИБУДЬ ВКУСНЯХА</div>
-                            <img src="https://images.meme-arsenal.com/63fcc78c2675f9cfa726614ba1130a21.jpg" class="food-image" alt="Торт">
+                            <div class="food-title">Шаурма</div>
+                            <img src="img\domashnyaya_shaurma.jpg" class="food-image" alt="Шаурма">
                         </div>
                     </div>
                 </div>
@@ -366,16 +138,16 @@
                     <div class="movie-category">
                         <h3>Звездные войны</h3>
                         <div class="movie-list">
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Эпизод I: Скрытая угроза</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Эпизод II: Атака клонов</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Эпизод III: Месть ситхов</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Эпизод IV: Новая надежда</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Эпизод V: Империя наносит ответный удар</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Эпизод VI: Возвращение джедая</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Эпизод VII: Пробуждение силы</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Эпизод VIII: Последние джедаи</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Эпизод IX: Скайуокер. Восход</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Войны клонов (сериал)</a>
+                            <a>Эпизод I: Скрытая угроза</a>
+                            <a>Эпизод II: Атака клонов</a>
+                            <a>Эпизод III: Месть ситхов</a>
+                            <a>Эпизод IV: Новая надежда</a>
+                            <a>Эпизод V: Империя наносит ответный удар</a>
+                            <a>Эпизод VI: Возвращение джедая</a>
+                            <a>Эпизод VII: Пробуждение силы</a>
+                            <a>Эпизод VIII: Последние джедаи</a>
+                            <a>Эпизод IX: Скайуокер. Восход</a>
+                            <a>Войны клонов (сериал)</a>
                         </div>
                     </div>
 
@@ -383,11 +155,11 @@
                     <div class="movie-category">
                         <h3>Пираты Карибского моря</h3>
                         <div class="movie-list">
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Проклятие Черной жемчужины</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Сундук мертвеца</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">На краю света</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">На странных берегах</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Мертвецы не рассказываю сказки</a>
+                            <a>Проклятие Черной жемчужины</a>
+                            <a>Сундук мертвеца</a>
+                            <a>На краю света</a>
+                            <a>На странных берегах</a>
+                            <a>Мертвецы не рассказываю сказки</a>
                         </div>
                     </div>
 
@@ -395,7 +167,7 @@
                     <div class="movie-category">
                         <h3>Отдельные кино</h3>
                         <div class="movie-list">
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Интерстеллар</a>
+                            <a>Интерстеллар</a>
                         </div>
                     </div>
 
@@ -403,23 +175,23 @@
                     <div class="movie-category">
                         <h3>Marvel</h3>
                         <div class="movie-list">
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Железный человек</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Железный человек 2</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Тор</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Капитан Америка</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Мстители</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Железный человек 3</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Тор 2</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Капитан Америка 2</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Стражи Галактики</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Мстители: Эра Альтрона</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Капитан Америка: Гражданская война</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Доктор Стрэндж</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Стражи Галактики 2</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Человек-паук: Возвращение домой</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Тор: Рагнарёк</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Мстители: Война бесконечности</a>
-                            <a href="https://eksmo.ru/test/kto-vy-iz-smesharikov/" class="movie-link">Мстители: Финал</a>
+                            <a>Железный человек</a>
+                            <a>Железный человек 2</a>
+                            <a>Тор</a>
+                            <a>Капитан Америка</a>
+                            <a>Мстители</a>
+                            <a>Железный человек 3</a>
+                            <a>Тор 2</a>
+                            <a>Капитан Америка 2</a>
+                            <a>Стражи Галактики</a>
+                            <a>Мстители: Эра Альтрона</a>
+                            <a>Капитан Америка: Гражданская война</a>
+                            <a>Доктор Стрэндж</a>
+                            <a>Стражи Галактики 2</a>
+                            <a>Человек-паук: Возвращение домой</a>
+                            <a>Тор: Рагнарёк</a>
+                            <a>Мстители: Война бесконечности</a>
+                            <a>Мстители: Финал</a>
                         </div>
                     </div>
                 </div>
