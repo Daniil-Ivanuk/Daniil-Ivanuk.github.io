@@ -95,7 +95,7 @@ body {
     color: $black;
 }
 
-//АВАТАРКА
+// АВАТАРКА
 .avatar {
     width: 200px;
     height: 200px;
@@ -123,7 +123,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        align-items: center; 
+        align-items: center;
 
         @media (max-width: 768px) {
             gap: 0.8rem;
@@ -151,7 +151,7 @@ body {
         height: auto;
         display: block;
         border-radius: 0;
-        margin: 0 auto; 
+        margin: 0 auto;
     }
 }
 
@@ -172,7 +172,7 @@ body {
     background-color: $white;
 
     .row {
-        justify-content: center; 
+        justify-content: center;
     }
 
     .food-item {
@@ -197,21 +197,68 @@ body {
         height: auto;
         display: block;
         border-radius: 0;
-        margin: 0 auto; 
+        margin: 0 auto;
     }
+}
+
+// БЛОК СО ССЫЛКАМИ НА ДЗ №3
+.hw-nav {
+    background: $pink;
+    padding: 15px 0;
+    text-align: center;
+    
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .nav-title {
+        font-weight: bold;
+    }
+    
+    .nav-link-item {
+        color: $black;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// БЛОК СО ССЫЛКОЙ НА ДОКЛАД
+.lecture-link {
+    display: block;
+    color: $black;
+    background: $pink;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+.lecture-block {
+    background: $pink;
+    text-align: center;
+    padding: 15px 0;
 }
 
 // Адаптация для мобильных устройств
 @media (max-width: 768px) {
     .games-section {
         .game-image {
-            width: 40%; 
+            width: 40%;
         }
     }
     
     .food-section {
         .food-image {
-            width: 100%; 
+            width: 100%;
         }
     }
 }
@@ -219,7 +266,7 @@ body {
 @media (max-width: 576px) {
     .games-section {
         .game-image {
-            width: 60%; 
+            width: 60%;
         }
     }
 }
@@ -263,7 +310,6 @@ body {
         text-decoration: none;
         padding: 0.3rem 0;
         border-bottom: 1px solid ;
-        transition: all 0.3s ease;
 
         &:hover {
             color: $greenyellow;
