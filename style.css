@@ -177,6 +177,45 @@ body {
   margin: 0 auto;
 }
 
+.hw-nav {
+  background: pink;
+  padding: 15px 0;
+  text-align: center;
+}
+.hw-nav .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.hw-nav .nav-title {
+  font-weight: bold;
+}
+.hw-nav .nav-link-item {
+  color: black;
+  text-decoration: none;
+}
+.hw-nav .nav-link-item:hover {
+  text-decoration: underline;
+}
+
+.lecture-link {
+  display: block;
+  color: black;
+  background: pink;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+}
+.lecture-link:hover {
+  text-decoration: underline;
+}
+
+.lecture-block {
+  background: pink;
+  text-align: center;
+  padding: 15px 0;
+}
+
 @media (max-width: 768px) {
   .games-section .game-image {
     width: 40%;
@@ -224,7 +263,6 @@ body {
   text-decoration: none;
   padding: 0.3rem 0;
   border-bottom: 1px solid;
-  transition: all 0.3s ease;
 }
 .movies-section .movie-link:hover {
   color: greenyellow;
