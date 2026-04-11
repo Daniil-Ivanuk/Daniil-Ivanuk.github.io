@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Изменение классов квадрата</title>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: gray;
+            }
+            
+            .box.large {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .box.red {
+                background-color: red;
+            }
+            
+            .box.small {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .box.blue {
+                background-color: blue;
+            }
+            
+            .box.medium {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .box.green {
+                background-color: green;
+            }
+            
+            button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+        </style>
+
+        <script>
+            let stateIndex = 0;
+            const states = [
+                { classes: [], text: "Стандарт" },
+                { classes: ["large", "red"], text: "Большой красный" },
+                { classes: ["small", "blue"], text: "Маленький синий" },
+                { classes: ["medium", "green"], text: "Средний зелёный" }
+            ];
+            
+            function changeState(btn) 
+            {
+                const box = document.getElementById("stateBox");
+                
+                //удаляем все возможные классы 
+                box.classList.remove("large", "red", "small", "blue", "medium", "green");
+
+                //переход к следующему состоянию
+                stateIndex = (stateIndex + 1) % states.length;
+
+                //добавляем классы для текущего состояния
+                const currentState = states[stateIndex];
+
+                for (let i = 0; i < currentState.classes.length; i++) 
+                {
+                    box.classList.add(currentState.classes[i]);
+                }
+                //меняем текст кнопки
+                btn.innerText = currentState.text;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="stateBox" class="box"></div>
+        <button onclick="changeState(this)">Стандарт</button>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Случайные цвета квадратов</title>
+        <style>
+            .container {
+                display: flex;
+                gap: 15px;
+                margin: 20px 0;
+            }
+            .square {
+                width: 100px;
+                height: 100px;
+                background-color: white;
+                border: 5px;
+            }
+            button {
+                margin: 5px;
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+        </style>
+        <script>
+            const palette = ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "cyan", "lime"];
+            
+            function randomColors() {
+                const squares = document.querySelectorAll(".square");
+                
+                for (let i = 0; i < squares.length; i++) 
+                {
+                    const randomColor = palette[Math.floor(Math.random() * palette.length)];
+                    squares[i].style.backgroundColor = randomColor;
+                }
+            }
+            
+            function resetColors() {
+                const squares = document.querySelectorAll(".square");
+                for (let i = 0; i < squares.length; i++) 
+                {
+                    squares[i].style.backgroundColor = "white";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+        
+        <button onclick="randomColors()">Случайные цвета</button>
+        <button onclick="resetColors()">Сброс</button>
+    </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Управление абзацами</title>
+        <style>
+            .text-block {
+                display: inline-block;
+                padding: 10px;
+                margin: 10px 0;
+                background-color: grey;
+                border-left: 5px solid navy;
+            }
+            button {
+                margin: 5px;
+                padding: 5px 15px;
+            }
+        </style>
+        <script>
+            function toggleParagraph(paragraphId, btn) 
+            {
+                const paragraph = document.getElementById(paragraphId);
+                
+                //переключение видимости абзаца
+                if (paragraph.style.display === "none") 
+                {
+                    paragraph.style.display = "inline-block";
+                    btn.innerText = "Скрыть";
+                } 
+                else 
+                {
+                    paragraph.style.display = "none";
+                    btn.innerText = "Показать";
+                }
+                updateMainButton();
+            }
+            
+            function toggleAll() 
+                {
+                const paragraphs = document.querySelectorAll(".text-block");
+                const mainBtn = document.getElementById("mainBtn");
+                //проверка все ли скрыты
+                let allHidden = true;
+                for (let i = 0; i < paragraphs.length; i++) 
+                {
+                    if (paragraphs[i].style.display !== "none") 
+                    {
+                        allHidden = false;
+                        break;
+                    }
+                }
+                
+                //если все скрыты - показываем все
+                //иначе - скрываем все
+                for (let i = 0; i < paragraphs.length; i++) {
+                    if (allHidden) 
+                    {
+                        paragraphs[i].style.display = "inline-block";
+                    } 
+                    else 
+                    {
+                        paragraphs[i].style.display = "none";
+                    }
+                }
+                
+                //обновление текста индивид. кнопок 
+                const individualBtns = document.querySelectorAll(".indivBtn");
+                for (let i = 0; i < individualBtns.length; i++) 
+                {
+                    if (allHidden) 
+                    {
+                        individualBtns[i].innerText = "Скрыть";
+                    } 
+                    else 
+                    {
+                        individualBtns[i].innerText = "Показать";
+                    }
+                }
+                
+                //обновл. текст общей кнопки
+                if (allHidden) 
+                {
+                    mainBtn.innerText = "Скрыть всё";
+                } else 
+                {
+                    mainBtn.innerText = "Показать всё";
+                }
+            }
+            
+            function updateMainButton() {
+                const paragraphs = document.querySelectorAll(".text-block");
+                const mainBtn = document.getElementById("mainBtn");
+                
+                //проверка видны ли какие-нибудь абзацы
+                let anyVisible = false;
+                for (let i = 0; i < paragraphs.length; i++) 
+                {
+                    if (paragraphs[i].style.display !== "none") 
+                    {
+                        anyVisible = true;
+                        break;
+                    }
+                }
+                
+                //меняем текст общей кнопки
+                if (anyVisible) 
+                {
+                    mainBtn.innerText = "Скрыть всё";
+                } 
+                else 
+                {
+                    mainBtn.innerText = "Показать всё";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <p id="p1" class="text-block">Первый абзац.</p>
+            <button class="indivBtn" onclick="toggleParagraph('p1', this)">Скрыть</button>
+        </div>
+        
+        <div>
+            <p id="p2" class="text-block">Второй абзац.</p>
+            <button class="indivBtn" onclick="toggleParagraph('p2', this)">Скрыть</button>
+        </div>
+        
+        <div>
+            <p id="p3" class="text-block">Третий абзац.</p>
+            <button class="indivBtn" onclick="toggleParagraph('p3', this)">Скрыть</button>
+        </div>
+        
+        <button id="mainBtn" onclick="toggleAll()">Скрыть всё</button>
+            
+    </body>
+</html>
