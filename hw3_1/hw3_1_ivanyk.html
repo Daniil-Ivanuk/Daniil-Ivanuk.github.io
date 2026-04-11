@@ -8,14 +8,11 @@
             const phrases = ["Доброе утро!", "Добрый день!", "Добрый вечер!"];
             
             function changeGreeting(buttonCl) {
-                // Меняем фразу циклически
+                //меняем фразу циклически
                 phraseIndex = (phraseIndex + 1) % phrases.length;
                 document.querySelector("h1").innerText = phrases[phraseIndex];
-                
-                // Увеличиваем счетчик кликов
                 clicks++;
-                
-                // Меняем текст кнопки
+                //меняем текст кнопки
                 buttonCl.innerText = "Кликов: " + clicks;
             }
         </script>
