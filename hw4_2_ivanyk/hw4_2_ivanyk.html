@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Complete JavaScript Course</title>
+        <script>
+            // Здесь будет ваш код
+            document.addEventListener('DOMContentLoaded', function() {
+                const myArray = ['Денис', 'Максим', 'Евгений', 'Артемий'];
+                
+                //выбираем элементы страницы
+                const outputTable = document.getElementById('output');
+                const addFriendInput = document.getElementById('addFriend');
+                const addNewButton = document.getElementById('addNew');
+                
+                                let votes = {
+                    'Денис': 0,
+                    'Максим': 0,
+                    'Евгений': 0,
+                    'Артемий': 0
+                };
+                
+                function createTable() {
+                    outputTable.innerHTML = '';
+                    
+                    myArray.forEach(function(name, index) {
+                        const row = document.createElement('tr');
+                        
+                        const cell1 = document.createElement('td');
+                        const cell2 = document.createElement('td');
+                        const cell3 = document.createElement('td');
+                        
+                        cell1.textContent = index + 1;
+                        cell2.textContent = name;
+                        cell3.textContent = votes[name];
+                        
+                        row.appendChild(cell1);
+                        row.appendChild(cell2);
+                        row.appendChild(cell3);
+                        
+                        row.addEventListener('click', function() {
+                            votes[name]++;
+                            cell3.textContent = votes[name];
+                        });
+                        
+                        outputTable.appendChild(row);
+                    });
+                }
+                
+                function addFriend() {
+                    const newName = addFriendInput.value;
+                    //проверка на пустоту
+                    if (newName !== '') {
+                        //добавляем в массив
+                        myArray.push(newName);
+                        //инициализируем голоса для нового друга
+                        votes[newName] = 0;
+                        //создание новой строки
+                        const newIndex = myArray.length - 1;
+                        const newRow = document.createElement('tr');
+                        
+                        const cell1 = document.createElement('td');
+                        const cell2 = document.createElement('td');
+                        const cell3 = document.createElement('td');
+                        
+                        cell1.textContent = newIndex + 1;
+                        cell2.textContent = newName;
+                        cell3.textContent = '0';
+                        
+                        newRow.appendChild(cell1);
+                        newRow.appendChild(cell2);
+                        newRow.appendChild(cell3);
+                        
+                        newRow.addEventListener('click', function() {
+                            votes[newName]++;
+                            cell3.textContent = votes[newName];
+                        });
+                        
+                        outputTable.appendChild(newRow);
+                        
+                        //очищаем поле ввода
+                        addFriendInput.value = '';
+                    }
+                }
+                
+                //обработчик для кнопки
+                addNewButton.addEventListener('click', addFriend);
+                createTable();
+            });
+            
+        </script>
+    </head>
+<body>
+    <div id="message">Complete JavaScript Course</div>
+    <div>
+        <input type="text" id="addFriend">
+        <input type="button" id="addNew" value="Add Friend">
+    </div>
+    <table id="output" border="1"></td>
+</body>
+</html>
