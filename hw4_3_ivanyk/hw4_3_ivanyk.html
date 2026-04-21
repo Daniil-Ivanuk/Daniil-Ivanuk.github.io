@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+    <title>Виселица</title>
+    <style>
+        .win-text {color: green;}   
+        .lose-text {color: red;}   
+        .letter {
+            display: inline-block;     
+            width: 35px;              
+            border: 1px solid black; 
+            text-align: center;       
+            margin: 2px;                      
+        }
+        .letter.used {background: aqua;} 
+        td {border: 1px solid black; padding: 5px 10px; text-align: center;} 
+        table {border-collapse: collapse; }
+    </style>
+    <script>
+    const words = ['JAVASCRIPT', 'PYTHON', 'PROGRAMMING', 'APPLE', 'DIGER', 'BIGER', 'MINER', 'TIGER'];
+
+    let currentWord = '';     
+    let guessedWord = '';     
+    let attemptsLeft = 6;      
+    let guessedLetters = new Set();//множество уже использованных букв чтобы нельзя было нажать дважды
+    let inGame = false;        
+    
+    let hangmanDiv, infoDiv, wordRow, lettersDiv, messageDiv, startBtn;
+    
+    const hangmanPics = [
+        "+---+\n|   |\n    |\n    |\n    |\n    |\n=====",
+        "+---+\n|   |\nO   |\n    |\n    |\n    |\n=====",
+        "+---+\n|   |\nO   |\n|   |\n    |\n    |\n=====",
+        "+---+\n|   |\nO   |\n/|  |\n    |\n    |\n=====",
+        "+---+\n|   |\nO   |\n/|\\ |\n    |\n    |\n=====",
+        "+---+\n|   |\nO   |\n/|\\ |\n/   |\n    |\n=====",
+        "+---+\n|   |\nO   |\n/|\\ |\n/ \\ |\n    |\n====="
+    ];
+    
+
+    function updateHangman() 
+    {
+        let mistakes = 6 - attemptsLeft;
+        if (mistakes > 6) mistakes = 6;
+        if (mistakes < 0) mistakes = 0;
+        hangmanDiv.textContent = hangmanPics[mistakes];
+    }
+    
+    //создает ячейки таблицы для каждой буквы угадываемого слова
+    function updateWordTable() 
+    {
+        wordRow.innerHTML = '';//очищаем старую строку
+        for (let i = 0; i < guessedWord.length; i++) 
+        {
+            const td = document.createElement('td');//создаем ячейку
+            td.textContent = guessedWord[i];//вставляем букву или _
+            wordRow.appendChild(td);//добавляем ячейку в строку
+        }
+    }
+    
+    function setMessage(text, isWin, isLose) {
+        messageDiv.textContent = text;         
+        messageDiv.className = '';//сбрасываем классы
+        if (isWin) messageDiv.className = 'win-text';   
+        if (isLose) messageDiv.className = 'lose-text'; 
+    }
+    
+    function checkGameOver() {
+        if (guessedWord === currentWord) 
+        {
+            inGame = false;  
+            setMessage('ПОБЕДА! Слово: ' + currentWord, true, false);
+            return true;
+        }
+      
+        if (attemptsLeft <= 0) 
+        {
+            inGame = false; 
+            setMessage('ПРОИГРЫШ! Слово: ' + currentWord, false, true);
+            //показываем правильное слово в таблице
+            guessedWord = currentWord;
+            updateWordTable();
+            return true;
+        }
+        return false; 
+    }
+    
+    function guessLetter(letter) {
+        if (!inGame) return;
+        if (guessedLetters.has(letter)) return;//если буква уже использовалась - пропускаем
+        guessedLetters.add(letter); //запоминаем что буква использована
+
+        let found = false; 
+        let newGuessed = guessedWord.split('');//превращаем строку в массив символов
+        
+        //ищем букву во всех позициях загаданного слова
+        for (let i = 0; i < currentWord.length; i++) 
+        {
+            if (currentWord[i] === letter) 
+            {
+                newGuessed[i] = letter;//открываем букву в этой позиции
+                found = true;
+            }
+        }
+        
+        if (found) 
+        {
+            guessedWord = newGuessed.join('');
+            updateWordTable();             
+            setMessage('Буква ' + letter + ' есть!', false, false);
+        } 
+        else 
+        {
+            attemptsLeft--;
+            updateHangman();         
+            infoDiv.textContent = 'Осталось попыток: ' + attemptsLeft;
+            setMessage('Буквы ' + letter + ' нет!', false, false);
+        }
+
+        document.getElementById('letter_' + letter).classList.add('used');
+        checkGameOver();
+    }
+    
+    //СОЗДАНИЕ КЛАВИАТУРЫ 
+    function createKeyboard() {
+        lettersDiv.innerHTML = '';  // Очищаем контейнер
+        for (let i = 65; i <= 90; i++) {
+            const letter = String.fromCharCode(i);//превращаем код в букву
+            const btn = document.createElement('span');  
+            btn.className = 'letter';
+            btn.id = 'letter_' + letter;
+            btn.textContent = letter;
+            btn.onclick = function() { guessLetter(letter); };  
+            lettersDiv.appendChild(btn); 
+        }
+    }
+    
+    //СБРОС КЛАВИАТУРЫ
+    function resetKeyboard() {
+        for (let i = 65; i <= 90; i++) {
+            const letter = String.fromCharCode(i);
+            const btn = document.getElementById('letter_' + letter);
+            if (btn) btn.classList.remove('used');
+        }
+    }
+    
+    //ЗАПУСК НОВОЙ ИГРЫ
+    function startGame() {
+        currentWord = words[Math.floor(Math.random() * words.length)];
+        guessedWord = '_'.repeat(currentWord.length);
+        attemptsLeft = 6;
+        guessedLetters.clear();
+        inGame = true;
+        
+        //обновляем весь интерфейс
+        updateHangman();
+        updateWordTable();
+        infoDiv.textContent = 'Осталось попыток: 6';
+        resetKeyboard();
+        setMessage('Игра началась!', false, false);
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+            hangmanDiv = document.getElementById('hangman');
+            infoDiv = document.getElementById('info');
+            wordRow = document.getElementById('wordRow');
+            lettersDiv = document.getElementById('letters');
+            messageDiv = document.getElementById('message');
+            startBtn = document.getElementById('startBtn');
+
+            startBtn.onclick = startGame;                  
+    
+            createKeyboard();  
+            startGame();      
+        });     
+</script>
+</head>
+<body>
+
+<h2>ВИСЕЛИЦА</h2>
+<pre id="hangman"></pre>
+<p id="info">Осталось попыток: 6</p>
+
+<table id="wordTable">
+    <tr id="wordRow"><tr>
+</table>
+
+<!--кнопки с буквами алфавита -->
+<div id="letters"></div>
+
+<!--сообщения для игрока-->
+<p id="message">Нажмите "Начать игру"</p>
+
+<button id="startBtn">Начать игру</button>
+
+</body>
+</html>
