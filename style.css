@@ -188,6 +188,13 @@ body {
   justify-content: center;
   gap: 20px;
 }
+@media (max-width: 768px) {
+  .hw-nav .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
 .hw-nav .nav-title {
   font-weight: bold;
 }
