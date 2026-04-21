@@ -201,7 +201,7 @@ body {
     }
 }
 
-// БЛОК СО ССЫЛКАМИ НА ДЗ №3
+// БЛОК СО ССЫЛКАМИ НА ДЗ 
 .hw-nav {
     background: $pink;
     padding: 15px 0;
@@ -212,6 +212,12 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
     }
     
     .nav-title {
