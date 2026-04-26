@@ -21,7 +21,6 @@
             height: 50px;
             position: absolute;
             background-color: red;
-            cursor: pointer;
             display: none;
         }
         
@@ -29,7 +28,6 @@
             text-align: center;
             padding: 10px;
             font-size: 1.3em;
-            font-family: Arial, sans-serif;
             margin-bottom: 20px;
         }
         
@@ -50,41 +48,26 @@
         }
     </style>
 </head>
+    
 <body>
     <div class="output"></div>
     <div class="message"></div>
 
     <script>
-        // Выбираем главные элементы
         const output = document.querySelector('.output');
         const message = document.querySelector('.message');
-        
-        // Создаем элемент div с классом box внутри output
         const box = document.createElement('div');
         box.classList.add('box');
         output.appendChild(box);
-        
-        // Создаем кнопку старта
         const startBtn = document.createElement('button');
         startBtn.textContent = 'Начать игру';
-        
-        // Вставляем кнопку после message
         message.insertAdjacentElement('afterend', startBtn);
-        
-        // Добавляем инструкцию в message
         message.innerHTML = 'Нажмите "Начать игру"';
+
+        const game = {start: null};
+
+        function getRandom(max) {return Math.random() * max;}
         
-        // Создаем глобальный объект game
-        const game = {
-            start: null
-        };
-        
-        // Функция для генерации случайного числа
-        function getRandom(max) {
-            return Math.random() * max;
-        }
-        
-        // Функция обработки щелчков на поле
         function handleBoxClick() {
             const endTime = new Date().getTime();
             const reactionTime = (endTime - game.start) / 1000;
@@ -93,36 +76,28 @@
             box.style.display = 'none';
         }
         
-        // Функция добавления поля
         function addBox() {
             message.innerHTML = 'Кликай быстро!';
-            
             game.start = new Date().getTime();
             box.style.display = 'block';
             
             const maxWidth = 500 - 50;
             const maxHeight = 500 - 50;
-            
             const randomLeft = getRandom(maxWidth);
             const randomTop = getRandom(maxHeight);
             
             box.style.left = randomLeft + 'px';
             box.style.top = randomTop + 'px';
         }
-        
-        // Функция начала игры
+
         function startGame() {
             message.innerHTML = 'Жди появление красного поля...';
             box.style.display = 'none';
-            
             const delay = getRandom(2000) + 1000;
             setTimeout(addBox, delay);
         }
         
-        // Кнопка старта
         startBtn.onclick = startGame;
-        
-        // Обработчик клика по красному полю
         box.onclick = handleBoxClick;
     </script>
 </body>
