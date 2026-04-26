@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Трекер мыши</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 250px;
+            background: yellow;
+            border: 2px solid black;
+            margin: 20px;
+        }
+        
+        .active {
+            background: red;
+        }
+        
+        .info {
+            margin: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" class="box"></div>
+    <div id="output" class="info">Наведи мышь на желтый квадрат</div>
+
+    <script>
+        const area = document.getElementById('area');
+        const output = document.getElementById('output');
+        
+        area.onmouseover = () => area.classList.add('active');
+        area.onmouseout = () => {
+            area.classList.remove('active');
+            output.innerHTML = 'Наведи мышь на желтый квадрат';
+        };
+        area.onmousemove = (e) => {
+            output.innerHTML = `X: ${e.clientX}, Y: ${e.clientY}`;
+        };
+    </script>
+</body>
+</html>

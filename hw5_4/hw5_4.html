@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Me Game</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        
+        .output {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 20px auto 30px auto;
+            position: relative;
+            background-color: lightblue;
+        }
+        
+        .box {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+            cursor: pointer;
+            display: none;
+        }
+        
+        .message {
+            text-align: center;
+            padding: 10px;
+            font-size: 1.3em;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="output"></div>
+    <div class="message"></div>
+
+    <script>
+        // Выбираем главные элементы
+        const output = document.querySelector('.output');
+        const message = document.querySelector('.message');
+        
+        // Создаем элемент div с классом box внутри output
+        const box = document.createElement('div');
+        box.classList.add('box');
+        output.appendChild(box);
+        
+        // Создаем кнопку старта
+        const startBtn = document.createElement('button');
+        startBtn.textContent = 'Начать игру';
+        
+        // Вставляем кнопку после message
+        message.insertAdjacentElement('afterend', startBtn);
+        
+        // Добавляем инструкцию в message
+        message.innerHTML = 'Нажмите "Начать игру"';
+        
+        // Создаем глобальный объект game
+        const game = {
+            start: null
+        };
+        
+        // Функция для генерации случайного числа
+        function getRandom(max) {
+            return Math.random() * max;
+        }
+        
+        // Функция обработки щелчков на поле
+        function handleBoxClick() {
+            const endTime = new Date().getTime();
+            const reactionTime = (endTime - game.start) / 1000;
+            message.innerHTML = `Ваше время: ${reactionTime.toFixed(3)} секунд! Нажмите "Начать игру" чтобы играть снова`;
+            game.start = null;
+            box.style.display = 'none';
+        }
+        
+        // Функция добавления поля
+        function addBox() {
+            message.innerHTML = 'Кликай быстро!';
+            
+            game.start = new Date().getTime();
+            box.style.display = 'block';
+            
+            const maxWidth = 500 - 50;
+            const maxHeight = 500 - 50;
+            
+            const randomLeft = getRandom(maxWidth);
+            const randomTop = getRandom(maxHeight);
+            
+            box.style.left = randomLeft + 'px';
+            box.style.top = randomTop + 'px';
+        }
+        
+        // Функция начала игры
+        function startGame() {
+            message.innerHTML = 'Жди появление красного поля...';
+            box.style.display = 'none';
+            
+            const delay = getRandom(2000) + 1000;
+            setTimeout(addBox, delay);
+        }
+        
+        // Кнопка старта
+        startBtn.onclick = startGame;
+        
+        // Обработчик клика по красному полю
+        box.onclick = handleBoxClick;
+    </script>
+</body>
+</html>
