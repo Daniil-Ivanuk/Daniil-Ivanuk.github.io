@@ -14,7 +14,7 @@ function updateLogDisplay() {
         return `
             <div class="log-entry">
                 <strong>Клик:</strong> 
-                <span class="log-text">«${click.textContent}»</span><br>
+                <span class="log-text">«${click.textContent}»</span>
                 <span class="log-details">
                     id: ${click.id} | 
                     tagName: ${click.tagName} | 
